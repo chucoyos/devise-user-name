@@ -1,0 +1,17 @@
+
+<% if current_user %>
+  <h1><%= current_user.username %></h1>
+  <p>Find me in app/views/pages/home.html.erb</p>
+  <p><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
+  <p><%= link_to 'Edit Account', edit_user_registration_path %></p>
+<% else %>
+
+<h1>You should Sign in</h1>
+<p>
+  <%= link_to 'Sign In', new_user_session_path %>
+</p>
+<p>
+<%= link_to 'Sign Up', new_user_registration_path %>
+
+
+<% end %>
